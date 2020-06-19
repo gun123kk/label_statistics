@@ -42,8 +42,16 @@ class rank_stcs_data():
 
 
     def __deal_with_type3_format(self, val, id_name):
-#type3 format ex:
-#['./file/105340033_name/', ['Drone_002', 'Drone_001'], [], './file/105340033_name/Drone_002', [], ['0a1cedcb9ad2cf5e621240b1ca144d82-asset.json'], './file/105340033_xxx/Drone_001', [], ['0a0cab3e707aae341744df88e9d3fb57-asset.json']],  
+        #type3 format ex:
+        #[0]:   ['./file/105340033_name/', 
+        #[1]:   ['Drone_002', 'Drone_001'], 
+        #[2]:   [], 
+        #[3]:   './file/105340033_name/Drone_002', 
+        #[4]:   [], 
+        #[5]:   ['0a1cedcb9ad2cf5e621240b1ca144d82-asset.json'], 
+        #[6]:   './file/105340033_xxx/Drone_001', 
+        #[7]:   [], 
+        #[8]:   ['0a0cab3e707aae341744df88e9d3fb57-asset.json']],  
         get_id = self.__search_id(id_name)
         get_name = self.__search_name(id_name)
         #print(get_id)
@@ -60,9 +68,20 @@ class rank_stcs_data():
             file_name = val[1][i]
             temp.append(str(file_name) + '/')
             self.__id_name_file_list.append(temp)
-            for j in range(len(val[5 + pitch])): 
-                self.__save_all_file_path.append(str(val[0]) + str(file_name) + '/' + val[5 + pitch][j])
+            for j in range(len(val[5 + pitch])):
+                file_name_json = val[5 + pitch][j]
+                if self.__filename_extension_check(file_name_json):
+                    self.__save_all_file_path.append(str(val[0]) + str(file_name) + '/' + val[5 + pitch][j])
             pitch = pitch + 3
+
+    def __filename_extension_check(self, val):
+        c = str(val)
+        pos0 = c.find('.json')
+        pos1 = c.find('.csv')
+        if pos0 > 0 or pos1 >0:
+            return True
+        else:
+            return False
 
 
     def __deal_with_type1_2_format(self, val, id_name):
@@ -78,7 +97,8 @@ class rank_stcs_data():
             temp.append(get_name)
             file_name = val[2][i]
             temp.append(file_name)
-            self.__save_all_file_path.append(str(val[0] + str(file_name)))
+            if self.__filename_extension_check(file_name):
+                self.__save_all_file_path.append(str(val[0] + str(file_name)))
             self.__id_name_file_list.append(temp) 
         
     def __show_save_all_file_path(self, path_val):
@@ -116,11 +136,13 @@ class rank_stcs_data():
             csv_json_file_path.append(temp)
         self.__add_id_name_filename_to_pd_data(csv_json_file_path)
 
-
 # public 
     def show_all_file_path(self):
-        for i in self.__save_all_file_path:
-            print(i)
+        if self.__show_all_file_path_flag:
+            for i in self.__save_all_file_path:
+                print(i)
+        else:
+            print('please do run_RSD() first!!')
 
     def create_final_execl(self, file_name):
         self.__pd_data.to_csv(file_name + ".csv", index=False)   
@@ -128,12 +150,15 @@ class rank_stcs_data():
     def run_RSD(self):
         self.__collect_name_id_list(self.__file_path)
         self.__get_file_path_list(self.__file_path, self.__all_id_name_list)
+        self.__show_all_file_path_flag = True
+        print('show_all_file_path_flag = True!!')
 
     def __init__(self, file_path):
         self.__file_path = file_path
         self.__all_id_name_list = []
         self.__id_name_file_list = []
         self.__save_all_file_path = []
+        self.__show_all_file_path_flag = False
         #print(self.__file_path)
 
 
