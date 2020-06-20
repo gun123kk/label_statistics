@@ -145,19 +145,19 @@ class rank_stcs_data():
         elif val.find('-asset.json') != -1:
             return "as-json"
 
-    def __init_label_qty(self, init_flag):
+    def __init_label_qty(self, table, init_flag):
         if init_flag == False:
-            self.__table = {'stand':0, 'walk':0, 'sit':0,'watchphone':0, 'basketball':0, 'baseball':0, 'riding':0, 'block25':0, 
+            table = {'stand':0, 'walk':0, 'sit':0,'watchphone':0, 'basketball':0, 'baseball':0, 'riding':0, 'block25':0, 
                     'block50':0,'block75':0, 'jump':0, 'push':0, 'skateboard':0, 'handstand':0, 'soccer':0, 'fishing':0}
             init_flag = True
             print('basic parameter updated ok')
         else:
             for i in self.__table:
                 #i expresses that is key(stand walk ....)
-                self.__table[i] = 0
+                table[i] = 0
             init_flag = True
 
-        return init_flag
+        return table, init_flag
 
     def __label_not_found_check(self, table, label):
         return label in table
@@ -168,13 +168,10 @@ class rank_stcs_data():
             #print(file_path)
             with open(file_path, 'r') as reader:
                 jf = json.loads(reader.read())
-            index = 0
             label = []
-            for i in jf:
-                label.append(jf['tags'][index]['name'])
-                #print(jf['tags'][index]['name'])
-                index = index + 1
-            #print(jf[tags][name])
+            for i in jf['assets']:
+                for j in jf['assets'][i]['regions'][0]['tags']:
+                    label.append(j)
             return label, False
         except:
             print('   wrong format: ' + file_path) 
@@ -191,6 +188,22 @@ class rank_stcs_data():
             print('   wrong format: ' + file_path) 
             return '', True
 
+    def __read_from_data(self, format_type, file_path):
+        label = []
+        if format_type == 'csv':
+            try:
+                ft = pd.read_csv(file_path)
+                label = ft['label']
+                wrong_format = False
+            except:
+                print('   wrong format: ' + str(file_path)) 
+                wrong_format = True
+        elif format_type =='ex-json':
+                label, wrong_format = self.__read_from_ex_json_data(file_path)
+        elif format_type =='as-json':
+                label, wrong_format = self.__read_from_as_json_data(file_path)
+        return label,wrong_format
+
     def __create_label_table(self, file_path):
         # label:
         # stand, walk, sit, watchphone, basketball, baseball, riding, 
@@ -200,27 +213,16 @@ class rank_stcs_data():
         #reads all file to update table
         self.__table = {}
         init_flag = False
-        init_flag = self.__init_label_qty(init_flag)
+        self.__table, init_flag = self.__init_label_qty(self.__table, init_flag)
         print(self.__table)
         print('   check others label... ') 
         for i in file_path:
             fp = str(i)
             fe = self.__which_filename_extension(fp)
-            label = []
+            #label = []
             wrong_format = False
+            label, wrong_format =  self.__read_from_data(fe, i)
             
-            if fe == 'csv':
-                try:
-                    ft = pd.read_csv(i)
-                    label = ft['label']
-                    wrong_format = False
-                except:
-                    print('   wrong format: ' + str(i)) 
-                    wrong_format = True
-            elif fe =='ex-json':
-                label, wrong_format = self.__read_from_ex_json_data(i)
-            elif fe =='as-json':
-                label, wrong_format = self.__read_from_as_json_data(i)
             if wrong_format == False:
                 for j in label:
                     j = j.lower()
@@ -228,6 +230,76 @@ class rank_stcs_data():
                         print('   ' + j + ' not found so update it to table!!')
                         self.__table[j] = 0
         print(self.__table) 
+
+    def __count_label_qty(self, table, label):
+        for i in label:
+            i = i.lower()
+            table[i] = table[i] + 1
+    
+    def __show_count_info(self,fp, ctr, now_id, now_name, now_file_name, table):
+        print("-------------------------------------------")
+        print(fp)
+        print(ctr)
+        print(now_id)
+        print(now_name)
+        print(now_file_name)
+        print(table)
+        print("-------------------------------------------")
+
+
+    def __read_file_content_and_statistics(self, file_path):
+        # label:                
+        # stand, walk, sit, watchphone, basketball, baseball, riding, 
+        # block25, block50, block75, jump, push, skateboard, handstand, soccer, fishing
+
+        get_id = []             
+        for _id in self.__pd_data['ID']:
+            get_id.append(_id)  
+        
+        get_name = []             
+        for _name in self.__pd_data['NAME']:
+            get_name.append(_name)  
+                       
+        get_file_name = []      
+        for file_name in self.__pd_data['FILE_NAME']:
+            get_file_name.append(file_name)
+        ctr = 0                 
+        
+        table = {}
+        content_list = []       
+        init_flag = True
+        table, init_flag = self.__init_label_qty(table, init_flag)                                                                                  
+        length = len(file_path)
+        #print(length)
+        for i in range(length):
+            fp = str(file_path[i])
+            #print(fp)
+            now_id = str(get_id[ctr]) 
+            now_name = str(get_name[ctr]) 
+            now_file_name = str(get_file_name[ctr]) 
+            fe = self.__which_filename_extension(fp)
+            wrong_format = False
+            
+            label, wrong_format =  self.__read_from_data(fe, fp)
+            if wrong_format == False:
+                self.__count_label_qty(table, label)
+           
+
+            if i+1 < length:
+                if file_path[i+1].find(now_id) == -1 or (file_path[i+1].find(now_id) != -1 and file_path[i+1].find(now_file_name) == -1): 
+                    content_list.append(table)
+                    table = {}
+                    #self.__show_count_info(fp, ctr, now_id, now_name, now_file_name, table)
+                    table, init_flag = self.__init_label_qty(table, init_flag)
+                    ctr = ctr + 1
+            elif i+1 == length:
+                content_list.append(table)
+                table = {}
+                #self.__show_count_info(fp, ctr, now_id, now_name, now_file_name, table)
+
+        #print(len(content_list)) 
+        #print(content_list)
+
 
 # public 
     def show_all_file_path(self):
@@ -244,10 +316,13 @@ class rank_stcs_data():
         self.__collect_name_id_list(self.__file_path)
         self.__get_file_path_list(self.__file_path, self.__all_id_name_list)
         self.__show_all_file_path_flag = True
-        print('show_all_file_path_flag = True!!')
-        print('updating label table...')
+        print('(1)show_all_file_path_flag = True!!')
+        print('(2)updating label table...')
         self.__create_label_table(self.__save_all_file_path)
         print('updated label table!!!')
+        print('(3)count label qty...')
+        self.__read_file_content_and_statistics(self.__save_all_file_path)
+        print('count finished!!!')
 
     def __init__(self, file_path):
         self.__file_path = file_path
