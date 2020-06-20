@@ -1,5 +1,6 @@
 import os, shutil
 import pandas as pd
+import json
 
 class rank_stcs_data():
 #private
@@ -78,7 +79,7 @@ class rank_stcs_data():
         c = str(val)
         pos0 = c.find('.json')
         pos1 = c.find('.csv')
-        if pos0 > 0 or pos1 >0:
+        if pos0 > 0 or pos1 > 0:
             return True
         else:
             return False
@@ -136,6 +137,98 @@ class rank_stcs_data():
             csv_json_file_path.append(temp)
         self.__add_id_name_filename_to_pd_data(csv_json_file_path)
 
+    def __which_filename_extension(self, val):
+        if val.find('.csv') != -1:
+            return "csv"
+        elif val.find('-export.json') != -1:
+            return "ex-json"
+        elif val.find('-asset.json') != -1:
+            return "as-json"
+
+    def __init_label_qty(self, init_flag):
+        if init_flag == False:
+            self.__table = {'stand':0, 'walk':0, 'sit':0,'watchphone':0, 'basketball':0, 'baseball':0, 'riding':0, 'block25':0, 
+                    'block50':0,'block75':0, 'jump':0, 'push':0, 'skateboard':0, 'handstand':0, 'soccer':0, 'fishing':0}
+            init_flag = True
+            print('basic parameter updated ok')
+        else:
+            for i in self.__table:
+                #i expresses that is key(stand walk ....)
+                self.__table[i] = 0
+            init_flag = True
+
+        return init_flag
+
+    def __label_not_found_check(self, table, label):
+        return label in table
+
+
+    def __read_from_ex_json_data(self, file_path):
+        try:
+            #print(file_path)
+            with open(file_path, 'r') as reader:
+                jf = json.loads(reader.read())
+            index = 0
+            label = []
+            for i in jf:
+                label.append(jf['tags'][index]['name'])
+                #print(jf['tags'][index]['name'])
+                index = index + 1
+            #print(jf[tags][name])
+            return label, False
+        except:
+            print('   wrong format: ' + file_path) 
+            return '', True
+
+    def __read_from_as_json_data(self, file_path):
+        try:
+            #print(file_path)
+            with open(file_path, 'r') as reader:
+                jf = json.loads(reader.read())
+            label = jf['regions'][0]['tags']
+            return label, False
+        except:
+            print('   wrong format: ' + file_path) 
+            return '', True
+
+    def __create_label_table(self, file_path):
+        # label:
+        # stand, walk, sit, watchphone, basketball, baseball, riding, 
+        # block25, block50, block75, jump, push, skateboard, handstand, soccer, fishing
+        # and others
+
+        #reads all file to update table
+        self.__table = {}
+        init_flag = False
+        init_flag = self.__init_label_qty(init_flag)
+        print(self.__table)
+        print('   check others label... ') 
+        for i in file_path:
+            fp = str(i)
+            fe = self.__which_filename_extension(fp)
+            label = []
+            wrong_format = False
+            
+            if fe == 'csv':
+                try:
+                    ft = pd.read_csv(i)
+                    label = ft['label']
+                    wrong_format = False
+                except:
+                    print('   wrong format: ' + str(i)) 
+                    wrong_format = True
+            elif fe =='ex-json':
+                label, wrong_format = self.__read_from_ex_json_data(i)
+            elif fe =='as-json':
+                label, wrong_format = self.__read_from_as_json_data(i)
+            if wrong_format == False:
+                for j in label:
+                    j = j.lower()
+                    if self.__label_not_found_check(self.__table, j) == False:
+                        print('   ' + j + ' not found so update it to table!!')
+                        self.__table[j] = 0
+        print(self.__table) 
+
 # public 
     def show_all_file_path(self):
         if self.__show_all_file_path_flag:
@@ -152,6 +245,9 @@ class rank_stcs_data():
         self.__get_file_path_list(self.__file_path, self.__all_id_name_list)
         self.__show_all_file_path_flag = True
         print('show_all_file_path_flag = True!!')
+        print('updating label table...')
+        self.__create_label_table(self.__save_all_file_path)
+        print('updated label table!!!')
 
     def __init__(self, file_path):
         self.__file_path = file_path
@@ -159,6 +255,7 @@ class rank_stcs_data():
         self.__id_name_file_list = []
         self.__save_all_file_path = []
         self.__show_all_file_path_flag = False
+        self.__table = {}
         #print(self.__file_path)
 
 
