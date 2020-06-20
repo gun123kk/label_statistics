@@ -300,6 +300,30 @@ class rank_stcs_data():
         #print(len(content_list)) 
         #print(content_list)
 
+        self.__count_and_total_result_to_pandas(content_list)
+
+    def __count_and_total_result_to_pandas(self, val):
+        stcs_column = []
+        for i in self.__table:
+            #i expresses that is key(stand walk ....)
+            stcs_column.append(i)
+
+        # creates total item 
+        for i in val:
+            #print(i)
+            total = 0
+            for j in stcs_column:
+                total = total + int(i[j])
+            i['total'] = total
+            
+        stcs_column.append('total')
+        self.__pd_stcs = pd.DataFrame(val, columns = stcs_column)                                                                                           
+        #self.__pd_stcs.to_csv("./stcs_result.csv", index=False)   
+        #print(self.__pd_stcs)  
+    
+    
+    def __combind_count_result_to_pd_data(self):
+        self.__pd_data = pd.concat([self.__pd_data, self.__pd_stcs],sort=False, axis=1)
 
 # public 
     def show_all_file_path(self):
@@ -322,6 +346,7 @@ class rank_stcs_data():
         print('updated label table!!!')
         print('(3)count label qty...')
         self.__read_file_content_and_statistics(self.__save_all_file_path)
+        self.__combind_count_result_to_pd_data()
         print('count finished!!!')
 
     def __init__(self, file_path):
