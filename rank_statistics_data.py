@@ -170,11 +170,23 @@ class rank_stcs_data():
                 jf = json.loads(reader.read())
             label = []
             for i in jf['assets']:
-                for j in jf['assets'][i]['regions'][0]['tags']:
-                    label.append(j)
+                try:
+                    for j in jf['assets'][i]['regions']:
+                        try:
+                            for k in range(len(jf['assets'][i]['regions'])):
+                                try:
+                                    for l in range(len(jf['assets'][i]['regions'][k]['tags'])):
+                                        label.append(jf['assets'][i]['regions'][k]['tags'][l])
+                                except:
+                                    print('   wrong format0: ' + file_path) 
+                        except:
+                            print('   wrong format1: ' + file_path) 
+                except:
+                    print('   wrong format2: ' + file_path) 
+                
             return label, False
         except:
-            print('   wrong format: ' + file_path) 
+            print('   wrong format 3: ' + file_path) 
             return '', True
 
     def __read_from_as_json_data(self, file_path):
@@ -321,10 +333,28 @@ class rank_stcs_data():
         #self.__pd_stcs.to_csv("./stcs_result.csv", index=False)   
         #print(self.__pd_stcs)  
     
-    
     def __combind_count_result_to_pd_data(self):
         self.__pd_data = pd.concat([self.__pd_data, self.__pd_stcs],sort=False, axis=1)
 
+    def __rank_function(self):
+        self.__pd_data = self.__pd_data.sort_values(by = 'total', ascending=False)
+        rank = []
+        prev = 0
+        cal_rank = 0
+        
+        for i in self.__pd_data['total']:
+            now = i
+            if now != prev:
+                cal_rank = cal_rank + 1
+            prev = now
+            rank.append(cal_rank)
+
+        self.__pd_rank = pd.DataFrame(rank, columns = ['rank'])         
+        
+        self.__pd_data.insert(0, 'rank', rank, True)
+
+        #print(self.__pd_data)
+        
 # public 
     def show_all_file_path(self):
         if self.__show_all_file_path_flag:
@@ -348,6 +378,10 @@ class rank_stcs_data():
         self.__read_file_content_and_statistics(self.__save_all_file_path)
         self.__combind_count_result_to_pd_data()
         print('count finished!!!')
+        print('(4)rank...')
+        self.__rank_function()
+        print('rank ok!!!')
+
 
     def __init__(self, file_path):
         self.__file_path = file_path
