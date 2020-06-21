@@ -1,6 +1,8 @@
 import os, shutil
 import pandas as pd
 import json
+from collections import defaultdict
+import numpy as np
 
 class rank_stcs_data():
 #private
@@ -12,7 +14,6 @@ class rank_stcs_data():
             if os.path.isdir(path_val) and i[0] !='.':
                 pos = i.find('_')
                 if pos > 0:
-                    #self.num_counter = self.num_counter + 1
                     get_id = i[0:pos]
                     get_name = i[pos+1:len(i)]
                     temp_list.append(get_id)
@@ -332,25 +333,100 @@ class rank_stcs_data():
         self.__pd_stcs = pd.DataFrame(val, columns = stcs_column)                                                                                           
         #self.__pd_stcs.to_csv("./stcs_result.csv", index=False)   
         #print(self.__pd_stcs)  
-    
-    def __combind_count_result_to_pd_data(self):
-        self.__pd_data = pd.concat([self.__pd_data, self.__pd_stcs],sort=False, axis=1)
 
-    def __rank_function(self):
-        self.__pd_data = self.__pd_data.sort_values(by = 'total', ascending=False)
-        rank = []
+    def __cal_rank(self, rank_val):
         prev = 0
         cal_rank = 0
-        
-        for i in self.__pd_data['total']:
+        rank = []
+        for i in rank_val:
             now = i
             if now != prev:
                 cal_rank = cal_rank + 1
             prev = now
             rank.append(cal_rank)
+        return rank
 
-        self.__pd_rank = pd.DataFrame(rank, columns = ['rank'])         
+    def __element_indices(self, entry):
+        result = defaultdict(list)
+        for ndx, element in enumerate(entry):
+            result[element].append(ndx)
+        return result
+
+    def __remove_person_data_redundancy(self, data):
+        val = []
+        ctr = 0
+        for i in data['ID']:
+            val.append(i)
+            ctr = ctr + 1
+
+        index = []
+        for element, indices in self.__element_indices(val).items():
+            if len(indices) > 1:
+                #print(element, indices)        
+                index.append(np.amax(indices))     
         
+        #print(index)
+        #remove ID NAME RANK total_by_person which are redundancy
+        index_ctr = 0
+        for i in range(ctr):
+            if i == index[index_ctr]:
+                #print(index[index_ctr])
+                #print(i)
+                c = index[index_ctr]
+                #print(c)
+                data.loc[int(c) ,'rank'] = ''
+                data.loc[int(c) ,'ID'] = ''
+                data.loc[int(c) ,'NAME'] = ''
+                data.loc[int(c) ,'total_by_person'] = ''
+                if index_ctr < len(index)-1:
+                    index_ctr = index_ctr + 1
+        #print(data)
+        #data.to_csv("./by_person.csv", index=False)   
+        self.__pd_data_bp = data.copy()
+
+    def __count_and_total_result_to_pandas_by_person(self, panda):
+        #panda.to_csv("./org.csv", index=False)   
+        _id = []
+        for i in panda['ID']:
+            _id.append(i)
+
+        count = 0
+        total_bp = []
+        cal_total = 0
+        for i in _id:
+            cal_total = panda['total'][count]
+            for j in range(len(_id)):
+                if i == _id[j] and j != count:
+                    cal_total = cal_total + panda['total'][j]
+            total_bp.append(cal_total)
+            count = count + 1
+        
+        length = 0
+        for i in panda:
+            length = length + 1
+            
+        panda.insert(length, 'total_by_person', total_bp, True)
+        panda = panda.sort_values(by = 'total_by_person', ascending=False)
+        panda = panda.reset_index(drop=True)
+        rank = []
+        rank = self.__cal_rank(panda['total_by_person'])
+        panda.insert(0, 'rank', rank, True)
+        #panda.to_csv("./by_person.csv", index=False)   
+        self.__remove_person_data_redundancy(panda)
+        
+        
+        
+    def __combind_count_result_to_pd_data(self):
+        self.__pd_data = pd.concat([self.__pd_data, self.__pd_stcs],sort=False, axis=1)
+
+    def __rank_function(self):
+        self.__pd_data_bp = self.__pd_data.copy()
+        self.__count_and_total_result_to_pandas_by_person(self.__pd_data_bp)
+
+        self.__pd_data = self.__pd_data.sort_values(by = 'total', ascending=False)
+        self.__pa_data = self.__pd_data.reset_index(drop=True)
+        rank = []
+        rank = self.__cal_rank(self.__pd_data['total'])
         self.__pd_data.insert(0, 'rank', rank, True)
 
         #print(self.__pd_data)
@@ -364,7 +440,8 @@ class rank_stcs_data():
             print('please do run_RSD() first!!')
 
     def create_final_execl(self, file_name):
-        self.__pd_data.to_csv(file_name + ".csv", index=False)   
+        self.__pd_data.to_csv(file_name + "_rank_by_file.csv", index=False)   
+        self.__pd_data_bp.to_csv(file_name + "_rank_by_person.csv", index=False)   
     
     def run_RSD(self):
         self.__collect_name_id_list(self.__file_path)

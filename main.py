@@ -6,7 +6,7 @@ def run():
     rsd = RSD.rank_stcs_data(file_path)
     rsd.run_RSD()
     #rsd.show_all_file_path()
-    rsd.create_final_execl("result_table_by_file")
+    rsd.create_final_execl("result_table")
 
 if __name__ == '__main__':
     print('start')
