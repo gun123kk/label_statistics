@@ -1,0 +1,1605 @@
+{
+    "name": "Drone_30",
+    "securityToken": "Drone_park",
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [
+        {
+            "name": "Stand",
+            "color": "#5db300"
+        },
+        {
+            "name": "walk",
+            "color": "#e81123"
+        },
+        {
+            "name": "sit",
+            "color": "#6917aa"
+        },
+        {
+            "name": "watchphone",
+            "color": "#015cda"
+        },
+        {
+            "name": "basketball",
+            "color": "#4894fe"
+        },
+        {
+            "name": "baseball",
+            "color": "#6b849c"
+        },
+        {
+            "name": "riding",
+            "color": "#70c400"
+        },
+        {
+            "name": "jump",
+            "color": "#f7929a"
+        },
+        {
+            "name": "push",
+            "color": "#257ffe"
+        },
+        {
+            "name": "skate",
+            "color": "#ddabe9"
+        },
+        {
+            "name": "handstand",
+            "color": "#ff8c00"
+        },
+        {
+            "name": "soccer",
+            "color": "#386300"
+        },
+        {
+            "name": "fishing",
+            "color": "#b40e1b"
+        },
+        {
+            "name": "stand",
+            "color": "#68217a"
+        },
+        {
+            "name": "block75",
+            "color": "#33cccc"
+        },
+        {
+            "name": "block50",
+            "color": "#016afe"
+        }
+    ],
+    "id": "1z8BI33pE",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "5fc77375e3c70e72a964974250ea57df",
+    "assets": {
+        "df1e7ab7f3e3c35540cc6bfa89e4dee0": {
+            "asset": {
+                "id": "df1e7ab7f3e3c35540cc6bfa89e4dee0",
+                "format": "mp4",
+                "state": 2,
+                "type": 3,
+                "name": "Drone_030.mp4#t=3.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=3",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 1,
+                    "type": 2
+                },
+                "timestamp": 3
+            },
+            "regions": [
+                {
+                    "id": "Z5IuozNPj",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "stand",
+                        "block75"
+                    ],
+                    "boundingBox": {
+                        "height": 180,
+                        "width": 153.31211193767587,
+                        "left": 143.95501405810685,
+                        "top": 0
+                    },
+                    "points": [
+                        {
+                            "x": 143.95501405810685,
+                            "y": 0
+                        },
+                        {
+                            "x": 297.2671259957827,
+                            "y": 0
+                        },
+                        {
+                            "x": 297.2671259957827,
+                            "y": 180
+                        },
+                        {
+                            "x": 143.95501405810685,
+                            "y": 180
+                        }
+                    ]
+                },
+                {
+                    "id": "GM48rSx1J",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "stand",
+                        "watchphone"
+                    ],
+                    "boundingBox": {
+                        "height": 862.9200439453125,
+                        "width": 276.39358305998127,
+                        "left": 2053.5184073336463,
+                        "top": 220.6799560546875
+                    },
+                    "points": [
+                        {
+                            "x": 2053.5184073336463,
+                            "y": 220.6799560546875
+                        },
+                        {
+                            "x": 2329.9119903936275,
+                            "y": 220.6799560546875
+                        },
+                        {
+                            "x": 2329.9119903936275,
+                            "y": 1083.6000000000001
+                        },
+                        {
+                            "x": 2053.5184073336463,
+                            "y": 1083.6000000000001
+                        }
+                    ]
+                },
+                {
+                    "id": "DL6JIz7Bp",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "stand"
+                    ],
+                    "boundingBox": {
+                        "height": 910.0800109863281,
+                        "width": 276.39358305998127,
+                        "left": 1869.1791383552015,
+                        "top": 241.4799560546875
+                    },
+                    "points": [
+                        {
+                            "x": 1869.1791383552015,
+                            "y": 241.4799560546875
+                        },
+                        {
+                            "x": 2145.5727214151825,
+                            "y": 241.4799560546875
+                        },
+                        {
+                            "x": 2145.5727214151825,
+                            "y": 1151.5599670410156
+                        },
+                        {
+                            "x": 1869.1791383552015,
+                            "y": 1151.5599670410156
+                        }
+                    ]
+                },
+                {
+                    "id": "Zha-JiVxQ",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "watchphone",
+                        "stand"
+                    ],
+                    "boundingBox": {
+                        "height": 1036.4400329589844,
+                        "width": 507.4414245548266,
+                        "left": 3332.5585754451736,
+                        "top": 432.3599670410157
+                    },
+                    "points": [
+                        {
+                            "x": 3332.5585754451736,
+                            "y": 432.3599670410157
+                        },
+                        {
+                            "x": 3840,
+                            "y": 432.3599670410157
+                        },
+                        {
+                            "x": 3840,
+                            "y": 1468.8
+                        },
+                        {
+                            "x": 3332.5585754451736,
+                            "y": 1468.8
+                        }
+                    ]
+                },
+                {
+                    "id": "3O9AndTOA",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "stand"
+                    ],
+                    "boundingBox": {
+                        "height": 600.1199890136722,
+                        "width": 345.49203373945653,
+                        "left": 2923.006824039363,
+                        "top": 0
+                    },
+                    "points": [
+                        {
+                            "x": 2923.006824039363,
+                            "y": 0
+                        },
+                        {
+                            "x": 3268.4988577788204,
+                            "y": 0
+                        },
+                        {
+                            "x": 3268.4988577788204,
+                            "y": 600.1199890136722
+                        },
+                        {
+                            "x": 2923.006824039363,
+                            "y": 600.1199890136722
+                        }
+                    ]
+                },
+                {
+                    "id": "v96speb08",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "sit",
+                        "block75"
+                    ],
+                    "boundingBox": {
+                        "height": 400.31998901367194,
+                        "width": 264.8773576616682,
+                        "left": 2863.265361410497,
+                        "top": 0
+                    },
+                    "points": [
+                        {
+                            "x": 2863.265361410497,
+                            "y": 0
+                        },
+                        {
+                            "x": 3128.142719072165,
+                            "y": 0
+                        },
+                        {
+                            "x": 3128.142719072165,
+                            "y": 400.31998901367194
+                        },
+                        {
+                            "x": 2863.265361410497,
+                            "y": 400.31998901367194
+                        }
+                    ]
+                },
+                {
+                    "id": "uLza1pBlQ",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "walk",
+                        "block50"
+                    ],
+                    "boundingBox": {
+                        "height": 266.40000000000003,
+                        "width": 277.11340206185565,
+                        "left": 939.3064667291471,
+                        "top": 0
+                    },
+                    "points": [
+                        {
+                            "x": 939.3064667291471,
+                            "y": 0
+                        },
+                        {
+                            "x": 1216.4198687910027,
+                            "y": 0
+                        },
+                        {
+                            "x": 1216.4198687910027,
+                            "y": 266.40000000000003
+                        },
+                        {
+                            "x": 939.3064667291471,
+                            "y": 266.40000000000003
+                        }
+                    ]
+                },
+                {
+                    "id": "nfdMfGtdG",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "walk",
+                        "block75"
+                    ],
+                    "boundingBox": {
+                        "height": 172.80000000000007,
+                        "width": 218.73477038425534,
+                        "left": 619.0065604498595,
+                        "top": 0
+                    },
+                    "points": [
+                        {
+                            "x": 619.0065604498595,
+                            "y": 0
+                        },
+                        {
+                            "x": 837.7413308341149,
+                            "y": 0
+                        },
+                        {
+                            "x": 837.7413308341149,
+                            "y": 172.80000000000007
+                        },
+                        {
+                            "x": 619.0065604498595,
+                            "y": 172.80000000000007
+                        }
+                    ]
+                },
+                {
+                    "id": "5zoBNccGV",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "walk",
+                        "block50"
+                    ],
+                    "boundingBox": {
+                        "height": 320.7599670410156,
+                        "width": 187.14151827553889,
+                        "left": 1191.227741330834,
+                        "top": 0
+                    },
+                    "points": [
+                        {
+                            "x": 1191.227741330834,
+                            "y": 0
+                        },
+                        {
+                            "x": 1378.369259606373,
+                            "y": 0
+                        },
+                        {
+                            "x": 1378.369259606373,
+                            "y": 320.7599670410156
+                        },
+                        {
+                            "x": 1191.227741330834,
+                            "y": 320.7599670410156
+                        }
+                    ]
+                },
+                {
+                    "id": "0-N_EleQh",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "walk",
+                        "block75"
+                    ],
+                    "boundingBox": {
+                        "height": 172.80000000000007,
+                        "width": 218.7347703842553,
+                        "left": 715.3795688847235,
+                        "top": 10
+                    },
+                    "points": [
+                        {
+                            "x": 715.3795688847235,
+                            "y": 10
+                        },
+                        {
+                            "x": 934.1143392689789,
+                            "y": 10
+                        },
+                        {
+                            "x": 934.1143392689789,
+                            "y": 182.80000000000007
+                        },
+                        {
+                            "x": 715.3795688847235,
+                            "y": 182.80000000000007
+                        }
+                    ]
+                },
+                {
+                    "id": "wOAKBteC2",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "walk"
+                    ],
+                    "boundingBox": {
+                        "height": 734.4000549316406,
+                        "width": 452.0186562792877,
+                        "left": 272.79481753748826,
+                        "top": 78.83997802734375
+                    },
+                    "points": [
+                        {
+                            "x": 272.79481753748826,
+                            "y": 78.83997802734375
+                        },
+                        {
+                            "x": 724.813473816776,
+                            "y": 78.83997802734375
+                        },
+                        {
+                            "x": 724.813473816776,
+                            "y": 813.2400329589844
+                        },
+                        {
+                            "x": 272.79481753748826,
+                            "y": 813.2400329589844
+                        }
+                    ]
+                },
+                {
+                    "id": "BHlIqV6ZA",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "block75"
+                    ],
+                    "boundingBox": {
+                        "height": 607.6799560546875,
+                        "width": 192.1799218017807,
+                        "left": 0,
+                        "top": 124.91998901367188
+                    },
+                    "points": [
+                        {
+                            "x": 0,
+                            "y": 124.91998901367188
+                        },
+                        {
+                            "x": 192.1799218017807,
+                            "y": 124.91998901367188
+                        },
+                        {
+                            "x": 192.1799218017807,
+                            "y": 732.5999450683594
+                        },
+                        {
+                            "x": 0,
+                            "y": 732.5999450683594
+                        }
+                    ]
+                }
+            ],
+            "version": "2.2.0"
+        },
+        "b81b530e49a370cba29a20916aef1a16": {
+            "asset": {
+                "id": "b81b530e49a370cba29a20916aef1a16",
+                "format": "2",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=2.2.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=2.2",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 2.2
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "a519804c3262c5b52cdeb57bc6e6a817": {
+            "asset": {
+                "id": "a519804c3262c5b52cdeb57bc6e6a817",
+                "format": "866667",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=1.866667.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=1.866667",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 1.866667
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "1469d4d38e1fa88a1aeaf696c363a499": {
+            "asset": {
+                "id": "1469d4d38e1fa88a1aeaf696c363a499",
+                "format": "266667",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=18.266667.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=18.266667",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 1,
+                    "type": 2
+                },
+                "timestamp": 18.266667
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "21c707cabfb4783828319888cc61f102": {
+            "asset": {
+                "id": "21c707cabfb4783828319888cc61f102",
+                "format": "6",
+                "state": 2,
+                "type": 3,
+                "name": "Drone_030.mp4#t=3.6.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=3.6",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 3.6
+            },
+            "regions": [
+                {
+                    "id": "glGRouZOa",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "watchphone"
+                    ],
+                    "boundingBox": {
+                        "height": 1117.8947368421052,
+                        "width": 486.116002620222,
+                        "left": 3256.029689426634,
+                        "top": 709.3915437397203
+                    },
+                    "points": [
+                        {
+                            "x": 3256.029689426634,
+                            "y": 709.3915437397203
+                        },
+                        {
+                            "x": 3742.145692046856,
+                            "y": 709.3915437397203
+                        },
+                        {
+                            "x": 3742.145692046856,
+                            "y": 1827.2862805818256
+                        },
+                        {
+                            "x": 3256.029689426634,
+                            "y": 1827.2862805818256
+                        }
+                    ]
+                }
+            ],
+            "version": "2.2.0"
+        },
+        "8af3201db7ba3e14981dd3f82985f91f": {
+            "asset": {
+                "id": "8af3201db7ba3e14981dd3f82985f91f",
+                "format": "2",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=25.2.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=25.2",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 25.2
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "15301a40275a246d5f4799f510530739": {
+            "asset": {
+                "id": "15301a40275a246d5f4799f510530739",
+                "format": "266667",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=25.266667.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=25.266667",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 25.266667
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "cf7f69f8e2ab4ab01f84141bb7ff705a": {
+            "asset": {
+                "id": "cf7f69f8e2ab4ab01f84141bb7ff705a",
+                "format": "133333",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=5.133333.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=5.133333",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 5.133333
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "83d7f99cfe6b067fb27b0406e165f051": {
+            "asset": {
+                "id": "83d7f99cfe6b067fb27b0406e165f051",
+                "format": "8",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=2.8.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=2.8",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 1,
+                    "type": 2
+                },
+                "timestamp": 2.8
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "eb132a9a1ac9260ead87c3cec1895dd3": {
+            "asset": {
+                "id": "eb132a9a1ac9260ead87c3cec1895dd3",
+                "format": "933333",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=2.933333.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=2.933333",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 1,
+                    "type": 2
+                },
+                "timestamp": 2.933333
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "067fc6b861db4cdd9b43ba289a5c3df5": {
+            "asset": {
+                "id": "067fc6b861db4cdd9b43ba289a5c3df5",
+                "format": "066667",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=3.066667.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=3.066667",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 3.066667
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "e49c68d98b39e9992756cc7939393147": {
+            "asset": {
+                "id": "e49c68d98b39e9992756cc7939393147",
+                "format": "866667",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=2.866667.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=2.866667",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 1,
+                    "type": 2
+                },
+                "timestamp": 2.866667
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "837eaadc2057e6d68da1b416b8ec52ba": {
+            "asset": {
+                "id": "837eaadc2057e6d68da1b416b8ec52ba",
+                "format": "533333",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=1.533333.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=1.533333",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 1.533333
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "3069f1af4f6a2372ce52d25bdd3950a7": {
+            "asset": {
+                "id": "3069f1af4f6a2372ce52d25bdd3950a7",
+                "format": "333333",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=153.333333.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=153.333333",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 153.333333
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "1672084f1cd40891c7fe4d644e8afe1b": {
+            "asset": {
+                "id": "1672084f1cd40891c7fe4d644e8afe1b",
+                "format": "866667",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=8.866667.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=8.866667",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 8.866667
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "c8b86e6ceb85e2c5e88b3009fcc61178": {
+            "asset": {
+                "id": "c8b86e6ceb85e2c5e88b3009fcc61178",
+                "format": "2",
+                "state": 2,
+                "type": 3,
+                "name": "Drone_030.mp4#t=28.2.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=28.2",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 28.2
+            },
+            "regions": [
+                {
+                    "id": "6JpcGYpcA",
+                    "type": "POLYGON",
+                    "tags": [
+                        "Stand"
+                    ],
+                    "boundingBox": {
+                        "height": 407.3684210526317,
+                        "width": 280.9373073366215,
+                        "left": 1491.491985203453,
+                        "top": 1088.338912160773
+                    },
+                    "points": [
+                        {
+                            "x": 1772.4292925400744,
+                            "y": 1495.7073332134046
+                        },
+                        {
+                            "x": 1532.5278398581997,
+                            "y": 1457.812596371299
+                        },
+                        {
+                            "x": 1491.491985203453,
+                            "y": 1100.9704429224917
+                        },
+                        {
+                            "x": 1766.115906288533,
+                            "y": 1088.338912160773
+                        },
+                        {
+                            "x": 1770.8508014796548,
+                            "y": 1482.6315789473683
+                        },
+                        {
+                            "x": 1772.4292925400744,
+                            "y": 1483.0756578947364
+                        },
+                        {
+                            "x": 1766.115906288533,
+                            "y": 1479.9178113435444
+                        }
+                    ]
+                }
+            ],
+            "version": "2.2.0"
+        },
+        "470acb609d613c01c54c889d00ef5afe": {
+            "asset": {
+                "id": "470acb609d613c01c54c889d00ef5afe",
+                "format": "733333",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=17.733333.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=17.733333",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 17.733333
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "4e665a07d52be74eed3205c0dad0af4c": {
+            "asset": {
+                "id": "4e665a07d52be74eed3205c0dad0af4c",
+                "format": "4",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=0.4.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=0.4",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 0.4
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "4f4a7ddfeda70b2302ae65a82f2f7778": {
+            "asset": {
+                "id": "4f4a7ddfeda70b2302ae65a82f2f7778",
+                "format": "133333",
+                "state": 2,
+                "type": 3,
+                "name": "Drone_030.mp4#t=6.133333.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=6.133333",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 6.133333
+            },
+            "regions": [
+                {
+                    "id": "bRkFAaYpC",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Stand"
+                    ],
+                    "boundingBox": {
+                        "height": 811.5789955540706,
+                        "width": 258.84103344636253,
+                        "left": 1835.5611320900125,
+                        "top": 1053.6020218698602
+                    },
+                    "points": [
+                        {
+                            "x": 1835.5611320900125,
+                            "y": 1053.6020218698602
+                        },
+                        {
+                            "x": 2094.402165536375,
+                            "y": 1053.6020218698602
+                        },
+                        {
+                            "x": 2094.402165536375,
+                            "y": 1865.1810174239308
+                        },
+                        {
+                            "x": 1835.5611320900125,
+                            "y": 1865.1810174239308
+                        }
+                    ]
+                },
+                {
+                    "id": "rOia6YP2_",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Stand"
+                    ],
+                    "boundingBox": {
+                        "height": 574.7368902909128,
+                        "width": 344.06914688655985,
+                        "left": 478.22441430332924,
+                        "top": 384.12828947368416
+                    },
+                    "points": [
+                        {
+                            "x": 478.22441430332924,
+                            "y": 384.12828947368416
+                        },
+                        {
+                            "x": 822.293561189889,
+                            "y": 384.12828947368416
+                        },
+                        {
+                            "x": 822.293561189889,
+                            "y": 958.865179764597
+                        },
+                        {
+                            "x": 478.22441430332924,
+                            "y": 958.865179764597
+                        }
+                    ]
+                },
+                {
+                    "id": "WLlkBYO5d",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Stand"
+                    ],
+                    "boundingBox": {
+                        "height": 748.4210526315788,
+                        "width": 407.20098643649817,
+                        "left": 3022.4416229963012,
+                        "top": 1334.654701634457
+                    },
+                    "points": [
+                        {
+                            "x": 3022.4416229963012,
+                            "y": 1334.654701634457
+                        },
+                        {
+                            "x": 3429.6426094327994,
+                            "y": 1334.654701634457
+                        },
+                        {
+                            "x": 3429.6426094327994,
+                            "y": 2083.075754266036
+                        },
+                        {
+                            "x": 3022.4416229963012,
+                            "y": 2083.075754266036
+                        }
+                    ]
+                },
+                {
+                    "id": "2N2Sll8Zn",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Stand"
+                    ],
+                    "boundingBox": {
+                        "height": 486.3157412880345,
+                        "width": 186.2391145191122,
+                        "left": 1333.6622418310728,
+                        "top": 134.65465344880755
+                    },
+                    "points": [
+                        {
+                            "x": 1333.6622418310728,
+                            "y": 134.65465344880755
+                        },
+                        {
+                            "x": 1519.901356350185,
+                            "y": 134.65465344880755
+                        },
+                        {
+                            "x": 1519.901356350185,
+                            "y": 620.9703947368421
+                        },
+                        {
+                            "x": 1333.6622418310728,
+                            "y": 620.9703947368421
+                        }
+                    ]
+                },
+                {
+                    "id": "7enrZLcW6",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Stand"
+                    ],
+                    "boundingBox": {
+                        "height": 492.6315789473684,
+                        "width": 195.70904939889027,
+                        "left": 781.2577065351419,
+                        "top": 33.60197368421052
+                    },
+                    "points": [
+                        {
+                            "x": 781.2577065351419,
+                            "y": 33.60197368421052
+                        },
+                        {
+                            "x": 976.9667559340321,
+                            "y": 33.60197368421052
+                        },
+                        {
+                            "x": 976.9667559340321,
+                            "y": 526.233552631579
+                        },
+                        {
+                            "x": 781.2577065351419,
+                            "y": 526.233552631579
+                        }
+                    ]
+                },
+                {
+                    "id": "18mzJs95R",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Stand"
+                    ],
+                    "boundingBox": {
+                        "height": 498.9474166067023,
+                        "width": 299.87674360357585,
+                        "left": 29.98771770961776,
+                        "top": 399.9178113435444
+                    },
+                    "points": [
+                        {
+                            "x": 29.98771770961776,
+                            "y": 399.9178113435444
+                        },
+                        {
+                            "x": 329.8644613131936,
+                            "y": 399.9178113435444
+                        },
+                        {
+                            "x": 329.8644613131936,
+                            "y": 898.8652279502467
+                        },
+                        {
+                            "x": 29.98771770961776,
+                            "y": 898.8652279502467
+                        }
+                    ]
+                },
+                {
+                    "id": "IAntOh1ig",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Stand"
+                    ],
+                    "boundingBox": {
+                        "height": 530.5263157894736,
+                        "width": 268.31075157983975,
+                        "left": 112.05921027281136,
+                        "top": 55.7072609349301
+                    },
+                    "points": [
+                        {
+                            "x": 112.05921027281136,
+                            "y": 55.7072609349301
+                        },
+                        {
+                            "x": 380.36996185265104,
+                            "y": 55.7072609349301
+                        },
+                        {
+                            "x": 380.36996185265104,
+                            "y": 586.2335767244037
+                        },
+                        {
+                            "x": 112.05921027281136,
+                            "y": 586.2335767244037
+                        }
+                    ]
+                },
+                {
+                    "id": "LwPqUgHD7",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Stand"
+                    ],
+                    "boundingBox": {
+                        "height": 444.128313566509,
+                        "width": 205.17869528360052,
+                        "left": 1911.3194551479655,
+                        "top": 0
+                    },
+                    "points": [
+                        {
+                            "x": 1911.3194551479655,
+                            "y": 0
+                        },
+                        {
+                            "x": 2116.498150431566,
+                            "y": 0
+                        },
+                        {
+                            "x": 2116.498150431566,
+                            "y": 444.128313566509
+                        },
+                        {
+                            "x": 1911.3194551479655,
+                            "y": 444.128313566509
+                        }
+                    ]
+                },
+                {
+                    "id": "jE0Ypk4dN",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Stand"
+                    ],
+                    "boundingBox": {
+                        "height": 476.8420570775082,
+                        "width": 312.5030826140567,
+                        "left": 509.7904785758323,
+                        "top": 144.12833765933388
+                    },
+                    "points": [
+                        {
+                            "x": 509.7904785758323,
+                            "y": 144.12833765933388
+                        },
+                        {
+                            "x": 822.293561189889,
+                            "y": 144.12833765933388
+                        },
+                        {
+                            "x": 822.293561189889,
+                            "y": 620.9703947368421
+                        },
+                        {
+                            "x": 509.7904785758323,
+                            "y": 620.9703947368421
+                        }
+                    ]
+                },
+                {
+                    "id": "pULH6KH03",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Stand"
+                    ],
+                    "boundingBox": {
+                        "height": 805.2631578947368,
+                        "width": 205.1789842786683,
+                        "left": 2050.209617755857,
+                        "top": 984.1283858449834
+                    },
+                    "points": [
+                        {
+                            "x": 2050.209617755857,
+                            "y": 984.1283858449834
+                        },
+                        {
+                            "x": 2255.3886020345253,
+                            "y": 984.1283858449834
+                        },
+                        {
+                            "x": 2255.3886020345253,
+                            "y": 1789.3915437397202
+                        },
+                        {
+                            "x": 2050.209617755857,
+                            "y": 1789.3915437397202
+                        }
+                    ]
+                }
+            ],
+            "version": "2.2.0"
+        },
+        "e6b63ef5bb480a58e7665c19e9d0a498": {
+            "asset": {
+                "id": "e6b63ef5bb480a58e7665c19e9d0a498",
+                "format": "466667",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=9.466667.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=9.466667",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 1,
+                    "type": 2
+                },
+                "timestamp": 9.466667
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "f0091e07df19219e3df6c097648dbd9c": {
+            "asset": {
+                "id": "f0091e07df19219e3df6c097648dbd9c",
+                "format": "066667",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=4.066667.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=4.066667",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 4.066667
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "6f5894119e37d3bca45a4cb22f783d4b": {
+            "asset": {
+                "id": "6f5894119e37d3bca45a4cb22f783d4b",
+                "format": "mp4",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=0.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=0",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 0
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "1e6d8dff36e815f1dd7f00916756f008": {
+            "asset": {
+                "id": "1e6d8dff36e815f1dd7f00916756f008",
+                "format": "933333",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=13.933333.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=13.933333",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 13.933333
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "709a2fe728b26ddf52a551986ba206b3": {
+            "asset": {
+                "id": "709a2fe728b26ddf52a551986ba206b3",
+                "format": "2",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=4.2.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=4.2",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 1,
+                    "type": 2
+                },
+                "timestamp": 4.2
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "f3a641174bb625a6600020dc5af2f1bd": {
+            "asset": {
+                "id": "f3a641174bb625a6600020dc5af2f1bd",
+                "format": "266667",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=4.266667.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=4.266667",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 1,
+                    "type": 2
+                },
+                "timestamp": 4.266667
+            },
+            "regions": [],
+            "version": "2.2.0"
+        },
+        "7940bf5af3486d9046298803122b7f0a": {
+            "asset": {
+                "id": "7940bf5af3486d9046298803122b7f0a",
+                "format": "4",
+                "state": 1,
+                "type": 3,
+                "name": "Drone_030.mp4#t=4.4.jpg",
+                "path": "file:C:/Drone_Source/Drone_030.mp4#t=4.4",
+                "size": {
+                    "width": 3840,
+                    "height": 2160
+                },
+                "parent": {
+                    "format": "mp4",
+                    "id": "5fc77375e3c70e72a964974250ea57df",
+                    "name": "Drone_030.mp4",
+                    "path": "file:C:/Drone_Source/Drone_030.mp4",
+                    "size": {
+                        "width": 3840,
+                        "height": 2160
+                    },
+                    "state": 2,
+                    "type": 2
+                },
+                "timestamp": 4.4
+            },
+            "regions": [],
+            "version": "2.2.0"
+        }
+    }
+}
