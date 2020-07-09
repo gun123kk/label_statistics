@@ -173,15 +173,8 @@ class rank_stcs_data():
             for i in jf['assets']:
                 try:
                     for j in jf['assets'][i]['regions']:
-                        try:
-                            for k in range(len(jf['assets'][i]['regions'])):
-                                try:
-                                    for l in range(len(jf['assets'][i]['regions'][k]['tags'])):
-                                        label.append(jf['assets'][i]['regions'][k]['tags'][l])
-                                except:
-                                    print('   wrong format0: ' + file_path) 
-                        except:
-                            print('   wrong format1: ' + file_path) 
+                        for k in j['tags']:
+                            label.append(k)
                 except:
                     print('   wrong format2: ' + file_path) 
                 
