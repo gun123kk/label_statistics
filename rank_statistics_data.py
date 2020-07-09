@@ -352,6 +352,7 @@ class rank_stcs_data():
             val.append(i)
             ctr = ctr + 1
 
+        #print(val)
         index = []
         for element, indices in self.__element_indices(val).items():
             if len(indices) > 1:
@@ -361,20 +362,21 @@ class rank_stcs_data():
         #print(index)
         #remove ID NAME RANK total_by_person which are redundancy
         index_ctr = 0
-        for i in range(ctr):
-            if i == index[index_ctr]:
-                #print(index[index_ctr])
-                #print(i)
-                c = index[index_ctr]
-                #print(c)
-                data.loc[int(c) ,'rank'] = ''
-                data.loc[int(c) ,'ID'] = ''
-                data.loc[int(c) ,'NAME'] = ''
-                data.loc[int(c) ,'total_by_person'] = ''
-                if index_ctr < len(index)-1:
-                    index_ctr = index_ctr + 1
-        #print(data)
-        #data.to_csv("./by_person.csv", index=False)   
+        if len(index) > 1:
+            for i in range(ctr):
+                if i == index[index_ctr]:
+                    #print(index[index_ctr])
+                    #print(i)
+                    c = index[index_ctr]
+                    #print(c)
+                    data.loc[int(c) ,'rank'] = ''
+                    data.loc[int(c) ,'ID'] = ''
+                    data.loc[int(c) ,'NAME'] = ''
+                    data.loc[int(c) ,'total_by_person'] = ''
+                    if index_ctr < len(index)-1:
+                        index_ctr = index_ctr + 1
+            #print(data)
+            #data.to_csv("./by_person.csv", index=False)   
         self.__pd_data_bp = data.copy()
 
     def __count_and_total_result_to_pandas_by_person(self, panda):
